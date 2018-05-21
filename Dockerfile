@@ -1,5 +1,5 @@
-FROM ubuntu:1404-163
-MAINTAINER qiang <194724379@qq.com>
+FROM zhiqiangvip/docker-ubuntu1404-163
+MAINTAINER qiang <zhiqiangvip999@gmail.com>
 
 # Install base packages
 RUN apt-get update && \
