@@ -68,21 +68,6 @@ WORKDIR /tmp/xdebug-2.5.5
 RUN phpize
 RUN ./configure --with-php-config=/usr/bin/php-config && make && make install
 
-RUN echo "[xdebug]\n \
-zend_extension=/usr/lib/php5/20121212/xdebug.so \n \
-xdebug.remote_enable = 1 \n \
-xdebug.profiler_enable =0 \n \
-xdebug.profiler_enable_trigger = 1 \n \
-xdebug.profiler_output_name = [%t]_%R.profile \n \
-xdebug.profiler_output_dir = /data/__PHPDEBUG__ \n \
-xdebug.auto_trace = 0 \n \
-xdebug.trace_output_dir = /data/__PHPDEBUG__ \n \
-xdebug.remote_port = 19001 \n \
-xdebug.ideky= XDEBUG_SESSION \n \
-xdebug.remote_host=10.20.103.87 \n \
-xdebug.remote_autostart = 0  \n" \
->> /etc/php5/apache2/php.ini
-
 RUN /usr/sbin/php5enmod mcrypt
 
 
